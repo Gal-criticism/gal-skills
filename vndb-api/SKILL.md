@@ -100,47 +100,46 @@ Combine filters with `and`/`or`:
 - **m**: Single entry can match multiple values
 - **i**: Inverting filter is not always equivalent to inverting selection
 
-## Shell Script Usage (Recommended for Sandboxed Environments)
+## Python Script Usage (Recommended)
 
-For environments with limited tools, use the provided lightweight curl-based script:
+For a more robust and maintainable solution, use the provided Python script:
 
 ### Location
-`scripts/vndb_query.sh`
+`scripts/vndb_query.py`
 
 ### Requirements
-- `curl` (required)
-- `jq` (optional, for JSON formatting)
+- Python 3.7+ (uses only standard library, no external dependencies)
 
 ### Quick Commands
 
 ```bash
 # Search characters
-./scripts/vndb_query.sh character "美雪"
+python scripts/vndb_query.py character "美雪"
 
 # Search visual novels
-./scripts/vndb_query.sh vn "Steins;Gate"
+python scripts/vndb_query.py vn "Steins;Gate"
 
 # Get VN by ID
-./scripts/vndb_query.sh vn_id "v17"
+python scripts/vndb_query.py vn_id "v17"
 
 # Get latest released games
-./scripts/vndb_query.sh latest 5
+python scripts/vndb_query.py latest 5
 
 # Get database stats
-./scripts/vndb_query.sh stats
+python scripts/vndb_query.py stats
 
 # Query user
-./scripts/vndb_query.sh user "yorhel"
+python scripts/vndb_query.py user "yorhel"
 ```
 
 ### Advanced Usage
 
 ```bash
 # Custom fields
-./scripts/vndb_query.sh character "美雪" "name,original,description,vns.title" 10
+python scripts/vndb_query.py character "美雪" "name,original,description,vns.title" 10
 
 # Generic endpoint query
-./scripts/vndb_query.sh query vn '{"search": "悬疑"}' "title,rating" "votecount" 20
+python scripts/vndb_query.py query vn '{"search": "悬疑"}' "title,rating" "votecount" 20
 ```
 
 ### Available Commands
