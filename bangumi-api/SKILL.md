@@ -21,8 +21,7 @@ Bangumi uses OAuth 2.0 with Authorization Code Grant flow for user authenticatio
 
 #### Method 1: Quick Access Token (Recommended for Testing)
 1. Obtain a token from: https://next.bgm.tv/demo/access-token
-2. Token format: Base64-like string (e.g., `6goCbAIAxl9prt1M6LGpkQg2BOzOj2jTMG9d8rey`)
-3. Include in requests: `Authorization: Bearer <your-token>`
+2. Include in requests: `Authorization: Bearer <your-token>`
 
 #### Method 2: Full OAuth 2.0 Flow (For Applications)
 
